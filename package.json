@@ -4,7 +4,8 @@
   "description": "an express learning-project",
   "main": "index.js",
   "scripts": {
-    "dev": "server"
+    "start": "server",
+    "dev": "nodemon server"
   },
   "keywords": [],
   "author": "stackkens",
@@ -12,5 +13,8 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }

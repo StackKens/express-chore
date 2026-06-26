@@ -17,6 +17,10 @@ const users = [
 app.get("/users/:id", (req, res) => {
   const id = Number(req.params.id);
   const user = users.find((u) => u.id === id);
+
+  if (!user) {
+    return res.status(404).json({ message: "user Not found" });
+  }
   res.json(user);
 });
 
