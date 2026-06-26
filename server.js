@@ -1,8 +1,18 @@
 const express = require("express");
+const morgan = require("morgan");
 
 const app = express();
 
 const PORT = 8000;
+
+//middleware
+
+app.use(morgan("dev"));
+
+// app.use((req, res, next) => {
+//   console.log(`${req.method}  ${req.url}`);
+//   // next();
+// });
 
 //get request
 app.get("/", (req, res) => {
