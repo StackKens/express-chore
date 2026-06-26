@@ -4,6 +4,7 @@ const app = express();
 
 const PORT = 8000;
 
+//get request
 app.get("/", (req, res) => {
   res.send("Hello world");
 });
@@ -24,4 +25,12 @@ app.get("/users/:id", (req, res) => {
   res.json(user);
 });
 
+//post request
+
+app.use(express.json());
+
+app.post("/api/auth/user/login", (req, res) => {
+  console.log(req.body);
+  res.json(req.body);
+});
 app.listen(PORT, () => console.log(`server running on port ${PORT}`));
