@@ -3,7 +3,7 @@ const morgan = require("morgan");
 
 const authMiddleWare = require("./middleware/authMiddleware");
 const { getAllUsers, getUserById } = require("./controllers/userController");
-
+const userRoutes = require("./routes/userRoutes");
 const app = express();
 
 const PORT = 8000;
@@ -40,8 +40,10 @@ app.get("/", (req, res) => {
 
 //get users
 
-app.get("/users", getAllUsers);
-app.get("/users/:id", getUserById);
+// app.get("/api/users", getAllUsers);
+// app.get("/api/users/:id", getUserById);
+
+app.use("/users", userRoutes);
 //post request
 
 app.post("/api/auth/user/login", (req, res) => {
